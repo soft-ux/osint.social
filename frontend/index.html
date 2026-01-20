@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSINT.SOCIAL — Open Global Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">OSINT.SOCIAL</div>
+    <div id="auth-buttons">
+      <button onclick="showLogin()">Войти</button>
+      <button onclick="showRegister()">Регистрация</button>
+    </div>
+    <div id="user-menu" style="display:none;">
+      <span id="username"></span>
+      <button onclick="logout()">Выйти</button>
+    </div>
+  </header>
+
+  <main id="feed">
+    <div class="post">Добро пожаловать в OSINT.SOCIAL — открытую сеть для исследователей!</div>
+  </main>
+
+  <div id="chat-box" class="hidden">
+    <div id="messages"></div>
+    <input type="text" id="msg-input" placeholder="Напишите сообщение..." onkeypress="sendOnEnter(event)">
+    <button onclick="sendMessage()">➤</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
