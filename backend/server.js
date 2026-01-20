@@ -12,7 +12,7 @@ const io = socketIo(server, {
   }
 });
 
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 io.on('connection', (socket) => {
   console.log('🌍 Новый пользователь подключился:', socket.id);
